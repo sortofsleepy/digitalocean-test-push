@@ -9,4 +9,4 @@ addons:
       - sshpass
 after_success:
   - export SSHPASS=$PASS
-  - scp -o stricthostkeychecking=no -r public $USER@104.236.130.43:/home/deploy/dist
+  - sshpass -e scp -o stricthostkeychecking=no -r public $USER@104.236.130.43:/home/deploy/dist
