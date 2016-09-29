@@ -8,5 +8,4 @@ addons:
     packages:
       - sshpass
 after_success:
-  - export SSHPASS=$PASS
   - sshpass -p $PASSWORD scp -o stricthostkeychecking=no -r public $USER@104.236.130.43:/home/deploy/dist
