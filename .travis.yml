@@ -9,4 +9,4 @@ addons:
       - sshpass
 script: node testbuild.js
 after_success:
-  - sshpass -p $PASSWORD scp -o stricthostkeychecking=no -r dist $USER@104.236.130.43:/home/deploy
+  - sshpass -p $PASSWORD scp -o stricthostkeychecking=no -r dist $USER@104.236.130.43:/home/deploy/dist
