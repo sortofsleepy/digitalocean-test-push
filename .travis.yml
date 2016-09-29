@@ -3,4 +3,5 @@ node_js:
   - "6"
 install: npm install
 after_success:
-   "curl --ftp-create-dirs -T uploadfilename -u $FTP_USER:$FTP_PASSWORD ftp://104.236.130.43/root/test/site"
+   - "apt-get install sshpass"
+   - "sshpass -p $FTP_PASSWORD scp -r ./dist $FTP_USER@104.236.130.43:/home/deploy/dist"
