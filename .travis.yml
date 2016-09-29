@@ -8,5 +8,5 @@ addons:
     packages:
       - sshpass
 after_success:
-  - "export SSHPASS=$FTP_PASSWORD"
-  - "sshpass -e scp -r ./public $FTP_USER@104.236.130.43:/home/deploy/dist"
+  - "export SSHPASS=$PASSWORD"
+  - "sshpass -e scp -r public $USER@104.236.130.43:/home/deploy/dist"
