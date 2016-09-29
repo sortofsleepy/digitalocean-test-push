@@ -2,9 +2,11 @@ language: node_js
 node_js:
   - "6"
 install: npm install
+sudo: required
 addons:
   apt:
     packages:
       - sshpass
 after_success:
-   - "sshpass -e scp -r ./public $FTP_USER@104.236.130.43:/home/deploy/dist"
+  - "export SSHPASS=$FTP_PASSWORD"
+  - "sshpass -e scp -r ./public $FTP_USER@104.236.130.43:/home/deploy/dist"
